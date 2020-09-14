@@ -12,7 +12,7 @@ public class StringUtilsTest {
 
         boolean isEmpty = StringUtils.isEmpty(input);
 
-        Assert.assertEquals(false, isEmpty);
+        Assert.assertEquals(true, isEmpty);
     }
 
     @Test
