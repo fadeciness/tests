@@ -17,11 +17,11 @@ OVERALL_TIMEOUT = int("$TIME_OUT") * 60
 print(OVERALL_TIMEOUT)
 
 # job specifics: should be passed in
-auth_token = "jadmin:mytoken"
+auth_token = "$LOGIN:$PASSWORD"
 # 11dd475135fe68174981722587629950a6
 jenkins_uri = "localhost:8080"
 job_name = "jenkins-test"
-build_token = "jadmin"
+build_token = "blabla"
 vers = "$1"
 
 # start the build
