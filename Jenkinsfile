@@ -42,7 +42,7 @@ pipeline {
                 TIME_OUT="${params.TIME_OUT}"
             }
             steps {
-                withCredentials([usernamePassword(credentialsId: abpm_creds, passwordVariable: 'PASSWORD', usernameVariable: 'LOGIN')])
+                withCredentials([usernamePassword(credentialsId: abpm_creds, passwordVariable: 'PASSWORD', usernameVariable: 'LOGIN')]) {
                 timeout(time: TIMEOUT_IN_MIN, unit: 'MINUTES') {
                     script {
                         simple = sh (
