@@ -32,10 +32,10 @@ pipeline {
                 PATH_TO_DEPENDENCIES_FILE="pom.xml"
                 SCRIPTS_DIR="environment/rb_dev/scripts"
                 TIMEOUT_IN_MIN=15
-                CORE_SERVICES_ARTIFACT_ID="core-services"
+                CORE_SERVICES_ARTIFACT_ID="jenkins-test"
             }
             steps {
-                //timeout(time: TIMEOUT_IN_MIN, unit: 'MINUTES') {
+                timeout(time: TIMEOUT_IN_MIN, unit: 'MINUTES') {
                     script {
                         core_services_version = sh (
                             script: "/bin/bash ${SCRIPTS_DIR}/version-detector.sh $CORE_SERVICES_ARTIFACT_ID, $PATH_TO_DEPENDENCIES_FILE",
@@ -51,7 +51,7 @@ pipeline {
                             println(result)
                         }
                     }
-                //}
+                }
             }
         }
     }
