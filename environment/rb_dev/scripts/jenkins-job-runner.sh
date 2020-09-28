@@ -14,6 +14,7 @@ import time
 QUEUE_POLL_INTERVAL = 2
 JOB_POLL_INTERVAL = 20
 OVERALL_TIMEOUT = "$TIME_OUT" * 60
+print(OVERALL_TIMEOUT)
 
 # job specifics: should be passed in
 auth_token = 'jadmin:11dd475135fe68174981722587629950a6'
@@ -52,7 +53,7 @@ while True:
         break
     except:
         #print( "no job ID yet for build: {}".format(task))
-        time.sleep(QUEUE_POLL_INTERVAL + 1000)
+        time.sleep(QUEUE_POLL_INTERVAL)
         elasped_time += QUEUE_POLL_INTERVAL
 
     if (elasped_time % (QUEUE_POLL_INTERVAL * 10)) == 0:
