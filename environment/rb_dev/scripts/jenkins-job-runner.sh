@@ -13,7 +13,7 @@ import time
 #
 QUEUE_POLL_INTERVAL = 2
 JOB_POLL_INTERVAL = 20
-OVERALL_TIMEOUT = "$TIME_OUT" * 60
+OVERALL_TIMEOUT = int("$TIME_OUT") * 60
 print(OVERALL_TIMEOUT)
 
 # job specifics: should be passed in
