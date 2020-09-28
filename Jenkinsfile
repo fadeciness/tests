@@ -28,8 +28,28 @@ pipeline {
             }
         }
         stage('End') {
+            environment {
+                PATH_TO_DEPENDENCIES_FILE="pom.xml"
+                SCRIPTS_DIR="environment/rb_dev/scripts"
+                TIMEOUT_IN_MIN=15
+                CORE_SERVICES_ARTIFACT_ID="core-services"
+            }
             steps {
-                echo '========== End stage! TESTS =========='
+                timeout(time: TIMEOUT_IN_MIN, unit: 'MINUTES') {
+                    script {
+                        core_services_version = sh (
+                            script: "/bin/bash ${SCRIPTS_DIR}/version-detector.sh $CORE_SERVICES_ARTIFACT_ID, $PATH_TO_DEPENDENCIES_FILE",
+                            returnStdout: true
+                        ).trim()
+                        if (core_services_version != "") {
+                            result = sh (
+                                script: "/bin/bash $SCRIPTS_DIR/jenkins-job-runner.sh $core_services_version",
+                                returnStdout: true
+                            ).trim()
+                            println(result)
+                        }
+                    }
+                }
             }
         }
     }
