@@ -98,7 +98,8 @@ isTwo=""
 if [ -z "${isOne}" ] && [ -z "${isTwo}" ]
 then
   job_status=$(python2 poll_job.py | grep "Status=" | tail -n 1 | cut -d '=' -f 2)
-  [[ $job_status == "ABORTED" ]] && echo "Has been compiled and uploaded to the NEXUS" || return
+  #[[ $job_status == "ABORTED" ]] && echo "Has been compiled and uploaded to the NEXUS" || return
+  echo $job_status
 else
   echo "Had already been in the NEXUS"
 fi
