@@ -43,7 +43,7 @@ pipeline {
                         ).trim()
                         println(simple)
                         core_services_version = sh (
-                            script: "/bin/bash ${SCRIPTS_DIR}/version-detector.sh $CORE_SERVICES_ARTIFACT_ID, $PATH_TO_DEPENDENCIES_FILE",
+                            script: "/bin/bash ${SCRIPTS_DIR}/version-detector.sh $CORE_SERVICES_ARTIFACT_ID $PATH_TO_DEPENDENCIES_FILE",
                             returnStdout: true
                         ).trim()
                         println("core_services_version = " + core_services_version)
