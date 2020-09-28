@@ -94,7 +94,7 @@ EOG
 python2 poll_job.py
 
 isOne=""
-isTwo="200 OK"
+isTwo=""
 if [ -z "${isOne}" ] && [ -z "${isTwo}" ]
 then
   job_status=$(python2 poll_job.py | grep "Status=" | tail -n 1 | cut -d '=' -f 2)
