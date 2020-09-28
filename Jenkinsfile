@@ -54,7 +54,7 @@ pipeline {
                                 returnStdout: true
                             ).trim()
                             println("The result is: " + result)
-                            if (result.contains("FAILURE")) {
+                            if (!result.contains("SUCCESS")) {
                                 error("THIS IS FAIL")
                             }
                         }
