@@ -17,7 +17,7 @@ OVERALL_TIMEOUT = int("$TIME_OUT") * 60
 print(OVERALL_TIMEOUT)
 
 # job specifics: should be passed in
-auth_token = "jadmin:jadmin"
+auth_token = "jadmin:mytoken"
 # 11dd475135fe68174981722587629950a6
 jenkins_uri = "localhost:8080"
 job_name = "jenkins-test"
