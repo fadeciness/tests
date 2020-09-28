@@ -6,6 +6,12 @@ pipeline {
         skipDefaultCheckout()
     }
 
+    parameters {
+
+    string(name: 'TIME_OUT', defaultValue: '1', description: 'Timeout')
+
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -33,6 +39,7 @@ pipeline {
                 SCRIPTS_DIR="environment/rb_dev/scripts"
                 TIMEOUT_IN_MIN=15
                 CORE_SERVICES_ARTIFACT_ID="jenkins-test"
+                TIME_OUT="${params.TIME_OUT}"
             }
             steps {
                 timeout(time: TIMEOUT_IN_MIN, unit: 'MINUTES') {
