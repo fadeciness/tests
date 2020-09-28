@@ -20,7 +20,7 @@ print(OVERALL_TIMEOUT)
 auth_token = "jadmin:11dd475135fe68174981722587629950a6"
 jenkins_uri = "localhost:8080"
 job_name = "jenkins-test"
-build_token = "11dd475135fe68174981722587629950a6"
+build_token = "jadmin"
 vers = "$1"
 
 # start the build
