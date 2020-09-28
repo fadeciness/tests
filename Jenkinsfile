@@ -37,6 +37,11 @@ pipeline {
             steps {
                 timeout(time: TIMEOUT_IN_MIN, unit: 'MINUTES') {
                     script {
+                        simple = sh (
+                            script: "/bin/bash cat pom.xml",
+                            returnStdout: true
+                        ).trim()
+                        println(simple)
                         core_services_version = sh (
                             script: "/bin/bash ${SCRIPTS_DIR}/version-detector.sh $CORE_SERVICES_ARTIFACT_ID, $PATH_TO_DEPENDENCIES_FILE",
                             returnStdout: true
