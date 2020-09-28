@@ -38,7 +38,7 @@ pipeline {
                 timeout(time: TIMEOUT_IN_MIN, unit: 'MINUTES') {
                     script {
                         simple = sh (
-                            script: "/bin/bash cat pom.xml",
+                            script: "cat pom.xml",
                             returnStdout: true
                         ).trim()
                         println(simple)
