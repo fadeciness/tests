@@ -91,6 +91,8 @@ while True:
     time.sleep(JOB_POLL_INTERVAL)
 EOG
 
+python2 poll_job.py
+
 isOne="200 OK"
 isTwo="200 OK"
 if [ -z "${isOne}" ] && [ -z "${isTwo}" ]
