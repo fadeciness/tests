@@ -53,7 +53,7 @@ pipeline {
                                 script: "/bin/bash $SCRIPTS_DIR/jenkins-job-runner.sh $core_services_version",
                                 returnStdout: true
                             ).trim()
-                            println(result)
+                            println("The result is: " + result)
                             if (result.contains("FAILURE")) {
                                 error("THIS IS FAIL")
                             }
