@@ -12,7 +12,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jenkins-test.version>1.0-SNAPSHOT</jenkins-test.version>
+        <jenkins-test.version>0.0.12-SNAPSHOT</jenkins-test.version>
     </properties>
 
     <dependencies>
