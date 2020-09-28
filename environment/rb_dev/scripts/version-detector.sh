@@ -68,7 +68,7 @@ echo $result
 
 get_version() {
   version=""
-  if [[ "$2" == *"pom.xml"*]]
+  if [[ "$2" == *"pom.xml"* ]]
   then
     version=$(process_pom_file $1 $2)
   else
