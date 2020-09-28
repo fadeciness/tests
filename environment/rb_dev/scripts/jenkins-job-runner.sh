@@ -93,7 +93,7 @@ EOG
 
 python2 poll_job.py
 
-isOne="200 OK"
+isOne=""
 isTwo="200 OK"
 if [ -z "${isOne}" ] && [ -z "${isTwo}" ]
 then
